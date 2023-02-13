@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "day": 1,
+    "categoryid": 1,
+    "name": "CS300",
+    "content": "CS300, Gulsen Demiroz, UC G030",
+    "start": 9,
+    "end": 10
+  },
+  {
+    "id": 2,
+    "day": 1,
+    "categoryid": 1,
+    "name": "CS306",
+    "content": "CS306, Elif Durdane Koc, UC G030",
+    "start": 10,
+    "end": 12
+  },
+  {
+    "id": 3,
+    "day": 2,
+    "categoryid": 1,
+    "name": "MATH204",
+    "content": "MATH204, Cem Guneri, FENS G077",
+    "start": 11,
+    "end": 12
+  },
+  {
+    "id": 4,
+    "day": 2,
+    "categoryid": 1,
+    "name": "CS300",
+    "content": "CS300, Gulsen Demiroz, UC G030",
+    "start": 12,
+    "end": 14
+  },
+  {
+    "id": 5,
+    "day": 3,
+    "categoryid": 1,
+    "name": "MATH203",
+    "content": "MATH203, Canan Kasikci, FMAN 1099",
+    "start": 9,
+    "end": 10
+  },
+  {
+    "id": 6,
+    "day": 3,
+    "categoryid": 1,
+    "name": "CS408",
+    "content": "CS408, Kursat Cagiltay, UC G030",
+    "start": 16,
+    "end": 17
+  },
+  {
+    "id": 7,
+    "day": 3,
+    "categoryid": 1,
+    "name": "CS306R",
+    "content": "CS306 Recitation, FENS L045",
+    "start": 17,
+    "end": 18
+  }
+]

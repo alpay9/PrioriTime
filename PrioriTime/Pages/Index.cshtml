@@ -3,8 +3,147 @@
 @{
     ViewData["Title"] = "Home page";
 }
+    <script src="~js/util.js"></script>
+    <script src="~js/main.js"></script>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">PrioriTime</h1>
+    </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
+        <div class="cd-schedule__timeline">
+            <ul>
+                @{
+                    var hour = 9;
+                    while (hour < 18)
+                    {
+                        string space = "";
+                        if (hour < 10) space += "0";
+                        <li><span>@space@hour.00</span></li>
+                        <li><span>@space@hour.30</span></li>
+                        hour++;
+                    }
+                    <li><span>@hour.00</span></li>
+                }
+            </ul>
+        </div>
+
+        <div class="cd-schedule__events">
+            <ul>
+                <li class="cd-schedule__group">
+                    <!--Mon-->
+                    <div class="cd-schedule__top-info"><span>Monday</span></div>
+                    <ul>
+                        @foreach (var activity in Model.Activities)
+                        {
+                            if (activity.Day == 1)
+                            {
+                                <li class="cd-schedule__event">
+                                    <script>window.alert("@activity.StartTime:00");</script>
+                                    <a data-start="@activity.StartTime:00" data-end="@activity.EndTime:00" data-content="@activity.Content" data-event="event-@activity.CategoryId" href="#0">
+                                        <em class="cd-schedule__name">@activity.Name</em>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </li>
+                <li class="cd-schedule__group">
+                    <!--Tue-->
+                    <div class="cd-schedule__top-info"><span>Tuesday</span></div>
+                    <ul>
+                        @foreach (var activity in Model.Activities)
+                        {
+                            if (activity.Day == 2)
+                            {
+                                <li class="cd-schedule__event">
+                                    <a data-start="@activity.StartTime:00" data-end="@activity.EndTime:00" data-content="@activity.Content" data-event="event-@activity.CategoryId" href="#0">
+                                        <em class="cd-schedule__name">@activity.Name</em>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </li>
+                <li class="cd-schedule__group">
+                    <!--Wed-->
+                    <div class="cd-schedule__top-info"><span>Wednesday</span></div>
+                    <ul>
+                        @foreach (var activity in Model.Activities)
+                        {
+                            if (activity.Day == 3)
+                            {
+                                <li class="cd-schedule__event">
+                                    <a data-start="@activity.StartTime:00" data-end="@activity.EndTime:00" data-content="@activity.Content" data-event="event-@activity.CategoryId" href="#0">
+                                        <em class="cd-schedule__name">@activity.Name</em>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </li>
+                <li class="cd-schedule__group">
+                    <!--Thu-->
+                    <div class="cd-schedule__top-info"><span>Thursday</span></div>
+                    <ul>
+                        @foreach (var activity in Model.Activities)
+                        {
+                            if (activity.Day == 4)
+                            {
+                                <li class="cd-schedule__event">
+                                    <a data-start="@activity.StartTime:00" data-end="@activity.EndTime:00" data-content="@activity.Content" data-event="event-@activity.CategoryId" href="#0">
+                                        <em class="cd-schedule__name">@activity.Name</em>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </li>
+                <li class="cd-schedule__group">
+                    <!--Fri-->
+                    <div class="cd-schedule__top-info"><span>Friday</span></div>
+                    <ul>
+                        @foreach (var activity in Model.Activities)
+                        {
+                            if (activity.Day == 5)
+                            {
+                                <li class="cd-schedule__event">
+                                    <a data-start="@activity.StartTime:00" data-end="@activity.EndTime:00" data-content="@activity.Content" data-event="event-@activity.CategoryId" href="#0">
+                                        <em class="cd-schedule__name">@activity.Name</em>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="cd-schedule-modal">
+            <header class="cd-schedule-modal__header">
+                <div class="cd-schedule-modal__content">
+                    <span class="cd-schedule-modal__date"></span>
+                    <h3 class="cd-schedule-modal__name"></h3>
+                </div>
+
+                <div class="cd-schedule-modal__header-bg"></div>
+            </header>
+
+            <div class="cd-schedule-modal__body">
+                <div class="cd-schedule-modal__event-info"></div>
+                <div class="cd-schedule-modal__body-bg"></div>
+            </div>
+
+            <a href="#0" class="cd-schedule-modal__close text-replace">Close</a>
+        </div>
+
+        <div class="cd-schedule__cover-layer"></div>
+    </div>
+
+    @foreach (var category in Model.Categories)
+    {
+        <h2>@category.Name</h2>
+    }
+
+
+</body>
